@@ -1,0 +1,12 @@
+.Header {
+  margin: 0;
+  padding: 0;
+  background: hsl(180, 29%, 50%) url('../images/bg-header-desktop.svg') ;
+  height: 20vh;
+}
+
+@media only screen and (max-width: 992px) {
+  .Header {
+    background: hsl(180, 29%, 50%) url('../images/bg-header-mobile.svg')
+  }
+}
