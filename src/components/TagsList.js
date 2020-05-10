@@ -19,7 +19,6 @@ class TagsList extends Component {
       );
     }
 
-    //let newArr = [...tools, 'hello'];
     return (
       <div className="TagsList">
         {toolsArr}

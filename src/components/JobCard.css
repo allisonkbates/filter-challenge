@@ -100,3 +100,10 @@ span {
   color: white;
   background-color: var(--desaturated-dark-cyan);
 }
+
+/* Warning Tests */
+.warning {
+  background-color: red;
+  color: white;
+  height: 50px;
+}
