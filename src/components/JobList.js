@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import postingData from '../data.json';
 import JobCard from './JobCard';
+import FilterBox from './FilterBox';
 import './JobList.css';
-
-function FilterBox(props) {
-  if (!props.showFilter) {
-    return null
-  }
-  return (
-    <div className="test"></div>
-  );
-}
 
 class JobList extends Component {
   constructor(props) {
@@ -21,15 +13,14 @@ class JobList extends Component {
     }
     this.handleClick = this.handleClick.bind(this);
   }
-
+  /*fix this so it's one setState call? */
   handleClick(event) {
-    /*this.setState({
-      tags: event.target.value
-    });*/
     this.setState({
-      showFilter: !this.state.showFilter,
       tags: [...this.state.tags, event.target.value]
     });
+    this.setState(state => ({
+      showFilter: !state.showFilter
+    }));
   }
 
   render() {
@@ -39,7 +30,7 @@ class JobList extends Component {
 
     return (
       <div>
-        <FilterBox showFilter={this.state.showFilter}/>
+        <FilterBox showFilter={this.state.showFilter} tags={this.state.tags}/>
         <div className="JobList">
           {postings}
         </div>
