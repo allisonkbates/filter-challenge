@@ -8,7 +8,7 @@ import './JobCard.css';
 class JobCard extends Component {
   render() {
     const posting = this.props.posting;
-
+    
     return (
       <div className="JobCard">
         <img src={Account} alt={posting.company} width="87" height="87"></img>

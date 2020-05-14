@@ -8,7 +8,7 @@ class JobList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFilter: false,
+      showFilter: true,
       tags: ['default']
     }
     this.handleClick = this.handleClick.bind(this);
@@ -18,9 +18,9 @@ class JobList extends Component {
     this.setState({
       tags: [...this.state.tags, event.target.value]
     });
-    this.setState(state => ({
+  /*  this.setState(state => ({
       showFilter: !state.showFilter
-    }));
+    })); */
   }
 
   render() {
