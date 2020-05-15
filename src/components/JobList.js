@@ -9,20 +9,16 @@ class JobList extends Component {
     super(props);
     this.state = {
       showFilter: true,
-      tags: ['default']
+      tags: [],
     }
     this.handleClick = this.handleClick.bind(this);
   }
-  /*fix this so it's one setState call? */
+
   handleClick(event) {
     this.setState({
-      tags: [...this.state.tags, event.target.value]
+      tags: Array.from(new Set([...this.state.tags, event.target.value]))
     });
-  /*  this.setState(state => ({
-      showFilter: !state.showFilter
-    })); */
   }
-
   render() {
     const postings = postingData.map((posting) =>
       <JobCard key={posting.id} posting={posting} showFilter={this.state.showFilter} handleClick={this.handleClick}/>

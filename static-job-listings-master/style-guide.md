@@ -32,4 +32,46 @@ The designs were created to the following widths:
 - Weights: 500, 700
 
 ### Allison's Notes
-- https://reactjs.org/docs/lists-and-keys.html for mapping over components
+
+For FilterBox:
+- Tags need to be in an array to map over to display
+
+For filtering actual content:
+- State will need to be able to discern what property it is
+
+one option:
+combine props.role + props.level into one array before mapping over
+but then you have to determine what type it is to add it to the right state
+let state = {
+  tags: ["Frontend", "Senior", "javascript", "ruby"],
+  role: ["Frontend", "Backend"],
+  level: ["Senior"],
+  languages: ["Javascript" , "Ruby"]
+}
+
+another option would be for state to know the tagname, role. if included in the list, it is enabled.
+
+let state = {
+  tags: [
+    {
+      tagName: "FrontEnd",
+      tagType: "Role"
+    },
+    {
+      tagName: "Senior",
+      tagType: "Level"
+    }
+  ]
+
+the last option is more hard-coded. the tags would be pre-populated and have a flag for enabled/disabled.
+let state = {
+  tags: [
+    {
+      tagName: "FrontEnd",
+      tagType: "Role"
+    },
+    {
+      tagName: "Senior",
+      tagType: "Level"
+    }
+  ]
