@@ -32,7 +32,13 @@ The designs were created to the following widths:
 - Weights: 500, 700
 
 ### Allison's Notes
+- Still need dynamic images
+- Need to figure out when to re-render job lists component with new data
+- Close button to wipe state of that one
+- Clear button to completely wipe states & tags
+- Correct "state updates may be asynchronous" section - https://reactjs.org/docs/state-and-lifecycle.html
 
+###  Old Notes
 For FilterBox:
 - Tags need to be in an array to map over to display
 
