@@ -13,7 +13,9 @@ class JobCard extends Component {
       <div className="JobCard">
         <img src={Account} alt={posting.company} width="87" height="87"></img>
         <StaticInfo posting={posting}/>
-        <TagsList posting={posting} showFilter={this.props.showFilter} handleClick={this.props.handleClick}/>
+        <TagsList posting={posting} showFilter={this.props.showFilter} filterRole={this.props.filterRole} 
+        filterLevel={this.props.filterLevel} filterLanguages={this.props.filterLanguages} 
+        filterTools={this.props.filterTools}/>
       </div>
     );
   }
