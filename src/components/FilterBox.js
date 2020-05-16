@@ -3,7 +3,7 @@ import './JobList.css';
 
 function FilterBox(props) {
   const showTag = props.tags.map((tag) => 
-    <li className="tags" key={tag}>{tag}<button className="close">&times;</button></li>
+    <li className="tagFilter" key={tag}>{tag}<button className="close">&times;</button></li>
   );
   if (props.tags.length === 0) {
     return null;

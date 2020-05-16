@@ -22,6 +22,10 @@
   color: #444;
 }
 
+.tagFilter {
+  display: inline;
+}
+
 .JobCard {
   --light-grayish-cyan: hsl(180, 52%, 96%);
   --light-grayish-cyan2: hsl(180, 31%, 95%);

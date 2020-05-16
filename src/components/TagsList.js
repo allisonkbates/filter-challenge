@@ -9,13 +9,13 @@ class TagsList extends Component {
     let toolsArr;
     if (tools) {
       toolsArr = tools.map((tool) => 
-        <button className="tags" onClick={this.props.handleClick} value={tool} key={tool}>{tool}</button>
+        <button className="tool tags" onClick={this.props.handleClick} value={tool} key={tool}>{tool}</button>
       );
     }
     let langArr;
     if (languages) {
       langArr = languages.map((lang) => 
-        <button className="tags" onClick={this.props.handleClick} value={lang} key={lang}>{lang}</button>
+        <button className="lang tags" onClick={this.props.handleClick} value={lang} key={lang}>{lang}</button>
       );
     }
 
@@ -23,8 +23,8 @@ class TagsList extends Component {
       <div className="TagsList">
         {toolsArr}
         {langArr}
-        <button className="tags" onClick={this.props.handleClick} value={posting.level}>{posting.level}</button>
-        <button className="tags" onClick={this.props.handleClick} value={posting.role}>{posting.role}</button>
+        <button className="level tags" onClick={this.props.handleClick} value={posting.level}>{posting.level}</button>
+        <button className="role tags" onClick={this.props.handleClick} value={posting.role}>{posting.role}</button>
       </div>
     );
   }
