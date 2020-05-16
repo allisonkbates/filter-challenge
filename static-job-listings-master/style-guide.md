@@ -32,6 +32,9 @@ The designs were created to the following widths:
 - Weights: 500, 700
 
 ### Allison's Notes
+- check hasOwnProperty before checking the values
+
+
 - Still need dynamic images
 - Need to figure out when to re-render job lists component with new data
 - Close button to wipe state of that one
