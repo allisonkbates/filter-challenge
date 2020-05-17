@@ -70,15 +70,24 @@ class JobList extends Component {
 
     const postings = postingsWithTags.map((posting) => {
       if (compare(this.state.filteredTags, posting.tags) === true || this.state.showFilterBox === false) {
-        return <JobCard key={posting.id} posting={posting} showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} handleClick={this.handleClick}/>
+        return <JobCard key={posting.id} posting={posting} showFilterBox={this.state.showFilterBox} 
+        filteredTags={this.state.filteredTags} handleClick={this.handleClick}/>
       } else {
         return null;
       }
     });
 
+    let filterBox;
+    if (this.state.showFilterBox) {
+      filterBox = <FilterBox showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} 
+      handleClick={this.handleClick} closeButton={this.closeButton}/>
+    } else {
+      filterBox = null;
+    }
+
     return (
       <div>
-        <FilterBox showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} handleClick={this.handleClick} closeButton={this.closeButton}/>
+        {filterBox}
         <div className="JobList">
           {postings}
         </div>

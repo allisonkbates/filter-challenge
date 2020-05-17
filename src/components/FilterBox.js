@@ -7,7 +7,7 @@ function FilterBox(props) {
   );
 
   return (
-    <div className="test">
+    <div className="filterBox">
       <ul>
         {showTag}
       </ul>
