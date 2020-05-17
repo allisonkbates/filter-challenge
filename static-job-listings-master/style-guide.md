@@ -33,6 +33,8 @@ The designs were created to the following widths:
 
 ### Allison's Notes
 - check hasOwnProperty before checking the values
+- try out concat method
+
 
 
 - Still need dynamic images

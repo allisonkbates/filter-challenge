@@ -4,78 +4,81 @@ import JobCard from './JobCard';
 import FilterBox from './FilterBox';
 import './JobList.css';
 
-
-
 class JobList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showAll: true,
-      roleTag: [],
-      levelTag: [],
-      languagesTag: ['CSS'],
-      toolsTag: []
+      filteredTags: [],
+      showFilterBox: false
     }
-    this.filterRole = this.filterRole.bind(this);
-    this.filterLevel = this.filterLevel.bind(this);
-    this.filterLanguages = this.filterLanguages.bind(this);
-    this.filterTools = this.filterTools.bind(this);
-    this.filterPostings = this.filterPostings.bind(this);
-    this.displayFilteredJobs = this.displayFilteredJobs.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.closeButton = this.closeButton.bind(this);
   }
 
-  filterRole(event) {
+  handleClick(event) {
+    console.log('clicked!');
     this.setState({
-      roleTag: Array.from(new Set([...this.state.roleTag, event.target.value])),
-      showAll: false
-    })
+      filteredTags: Array.from(new Set([...this.state.filteredTags, event.target.value])),
+      showFilterBox: true
+    });
   }
-  filterLevel(event) {
+
+  closeButton(event) {
     this.setState({
-      levelTag: Array.from(new Set([...this.state.levelTag, event.target.value])),
-      showAll: false
-    })
-  }
-  filterLanguages(event) {
-    this.setState({
-      languagesTag: Array.from(new Set([...this.state.languagesTag, event.target.value])),
-      showAll: false
-    })
-  }
-  filterTools(event) {
-    this.setState({
-      toolsTag: Array.from(new Set([...this.state.toolsTag, event.target.value])),
-      showAll: false
-    })
-  }
-  filterPostings(posting) {
-    if (this.state.roleTag.includes(posting.role) || (this.state.levelTag.includes(posting.level)) || (this.state.languagesTag.includes(posting.languages)) || (this.state.toolsTag.includes(posting.tools))) {
-      return true;
-    } else {
-      return false;
+      filteredTags: this.state.filteredTags.filter(tag => tag !== event.target.value),
+    });
+    if (this.state.filteredTags.length === 0) {
+      this.setState({
+        showFilterBox: false
+      })
     }
-  }
-  displayFilteredJobs() {
-    const filteredPostings = postingData.filter(this.filterPostings);
-    filteredPostings.map((posting) =>
-      <JobCard key={posting.id} posting={posting} showAll={this.state.showFilter} 
-      filterRole={this.filterRole} filterLevel={this.filterLevel} filterLanguages={this.filterLanguages} 
-      filterTools={this.filterTools}/>
-    );
   }
 
   render() {
-    const postings = postingData.map((posting) =>
-    <JobCard key={posting.id} posting={posting} showAll={this.state.showAll} 
-    filterRole={this.filterRole} filterLevel={this.filterLevel} filterLanguages={this.filterLanguages} 
-    filterTools={this.filterTools} roleTag={this.state.roleTag} levelTag={this.state.levelTag} 
-    languagesTag={this.state.languagesTag} toolsTag={this.state.toolsTag}/>
-    );
+    const postingsWithTags = postingData.map((posting) => {
+      if (posting.languages) {
+        posting.tags = [...posting.languages, posting.role, posting.level];
+        if(posting.tools) {
+          posting.tags = [...posting.tags, ...posting.tools]
+        } return posting;
+      } else if (posting.tools) {
+        posting.tags = [...posting.tools, posting.role, posting.level];
+        if (posting.languages) {
+          posting.tags = [...posting.tags, ...posting.languages]
+        } return posting;
+      } else {
+        posting.tags = [posting.role, posting.level]
+        return posting;
+      }
+    });
+
+    function compare(arr1, arr2) {
+      let arr3 = [];
+      arr1.forEach((element) => {
+        if (arr2.includes(element)) {
+          arr3.push('matches');
+        } else {
+          arr3.push('nope');
+        }
+      })
+      if (arr3.includes('nope')) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    const postings = postingsWithTags.map((posting) => {
+      if (compare(this.state.filteredTags, posting.tags) === true || this.state.showFilterBox === false) {
+        return <JobCard key={posting.id} posting={posting} showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} handleClick={this.handleClick}/>
+      } else {
+        return null;
+      }
+    });
 
     return (
       <div>
-        <FilterBox roleTag={this.state.roleTag} 
-        levelTag={this.state.levelTag} languagesTag={this.state.languagesTag} toolsTag={this.state.toolsTag}/>
+        <FilterBox showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} handleClick={this.handleClick} closeButton={this.closeButton}/>
         <div className="JobList">
           {postings}
         </div>
