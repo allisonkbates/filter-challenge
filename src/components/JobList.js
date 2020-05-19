@@ -76,7 +76,7 @@ class JobList extends Component {
     }
 
     return (
-      <div>
+      <div class="container">
         {filterBox}
         <div className="JobList">
           {postings}
