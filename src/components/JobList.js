@@ -53,19 +53,9 @@ class JobList extends Component {
     });
 
     function compare(arr1, arr2) {
-      let arr3 = [];
-      arr1.forEach((element) => {
-        if (arr2.includes(element)) {
-          arr3.push('matches');
-        } else {
-          arr3.push('nope');
-        }
+      return arr1.every((element) => {
+        return arr2.includes(element);
       })
-      if (arr3.includes('nope')) {
-        return false;
-      } else {
-        return true;
-      }
     }
 
     const postings = postingsWithTags.map((posting) => {
