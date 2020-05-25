@@ -13,6 +13,7 @@ class JobList extends Component {
     }
     this.handleClick = this.handleClick.bind(this);
     this.closeButton = this.closeButton.bind(this);
+    this.clearButton = this.clearButton.bind(this);
   }
 
   handleClick(event) {
@@ -27,11 +28,18 @@ class JobList extends Component {
     this.setState({
       filteredTags: this.state.filteredTags.filter(tag => tag !== event.target.value),
     });
-    if (this.state.filteredTags.length === 0) {
+    if (this.state.filteredTags.length === 1) {
       this.setState({
         showFilterBox: false
-      })
+      });
     }
+  }
+
+  clearButton(event) {
+    this.setState({
+      filteredTags: [],
+      showFilterBox: false
+    });
   }
 
   render() {
@@ -70,7 +78,7 @@ class JobList extends Component {
     let filterBox;
     if (this.state.showFilterBox) {
       filterBox = <FilterBox showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} 
-      handleClick={this.handleClick} closeButton={this.closeButton}/>
+      handleClick={this.handleClick} closeButton={this.closeButton} clearButton={this.clearButton}/>
     } else {
       filterBox = null;
     }

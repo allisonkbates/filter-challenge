@@ -11,6 +11,7 @@ function FilterBox(props) {
       <ul>
         {showTag}
       </ul>
+      <button className="clear" onClick={props.clearButton}>Clear</button>
     </div>
     
   );
