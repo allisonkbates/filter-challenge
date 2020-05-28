@@ -32,6 +32,9 @@ The designs were created to the following widths:
 - Weights: 500, 700
 
 ### Allison's Notes
+
+- https://www.w3schools.com/howto/howto_js_close_list_items.asp - to fix styling with close button
+
 - check hasOwnProperty before checking the values
 - try out concat method
 

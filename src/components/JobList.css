@@ -37,16 +37,21 @@
 }
 
 .close {
-  width: 25px;
-  color: #444;
+  background-color: var(--desaturated-dark-cyan);
+  color: white;
+  height: 100%;
+  margin: 0;
+}
+
+.close:hover {
+  background-color: black;
 }
 
 .tagFilter {
   display: inline;
   color: var(--desaturated-dark-cyan);
   background-color: var(--light-grayish-cyan2);
-  margin: 5px;
-  padding: 9px 5px 7px;
+  padding: 10px;
 }
 
 .clear {
@@ -81,6 +86,10 @@
 }
 .JobCard:hover {
   border-left: 5px solid var(--desaturated-dark-cyan);
+}
+
+.JobCard:hover .position {
+  color: var(--desaturated-dark-cyan);
 }
 
 img {
@@ -154,7 +163,7 @@ span {
   color: var(--desaturated-dark-cyan);
   background-color: var(--light-grayish-cyan2);
   margin: 5px;
-  padding: 9px 7px 7px;
+  padding: 9px 9px 7px;
   border-radius: 3px;
 }
 
