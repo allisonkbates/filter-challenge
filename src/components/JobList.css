@@ -6,19 +6,13 @@
   --dark-grayish-cyan: hsl(180, 8%, 52%);
   --very-dark-grayish-cyan: hsl(180, 14%, 20%);
   --desaturated-dark-cyan: hsl(180, 29%, 50%);
-  background-color: var(--light-grayish-cyan);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0px 150px;
 }
 /* Job List Container */
 .JobList {
-  background-color: var(--light-grayish-cyan);
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0px;
+  margin: 70px 0px 0px 0px;
+  padding: 0;
 }

@@ -7,3 +7,6 @@
   border: none;
   outline: none;
 }
+body {
+  background-color: hsl(180, 52%, 96%);
+}

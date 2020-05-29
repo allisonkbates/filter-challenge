@@ -1,0 +1,53 @@
+/* Top Row */
+.top-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.company {
+  color: var(--desaturated-dark-cyan);
+  font-weight: 700;
+  padding: .4rem .3rem .2rem 0rem;
+}
+
+.new {
+  color: white;
+  background-color: var(--desaturated-dark-cyan);
+  padding: 8px 8px 0px;
+  margin-left: 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.featured {
+  color: white;
+  background-color: var(--very-dark-grayish-cyan);
+  padding: 8px 8px 0px;
+  margin-left: 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* Middle Row */
+.position {
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+.position:hover {
+  color: var(--desaturated-dark-cyan);
+}
+
+/* Bottom Row */
+.bottom-row {
+  color: var(--dark-grayish-cyan);
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+}
+
+span {
+  padding: 0px 5px;
+}
