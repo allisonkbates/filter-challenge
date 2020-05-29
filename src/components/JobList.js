@@ -17,7 +17,6 @@ class JobList extends Component {
   }
 
   handleClick(event) {
-    console.log('clicked!');
     this.setState({
       filteredTags: Array.from(new Set([...this.state.filteredTags, event.target.value])),
       showFilterBox: true
@@ -84,7 +83,7 @@ class JobList extends Component {
     }
 
     return (
-      <div class="container">
+      <div className="container">
         {filterBox}
         <div className="JobList">
           {postings}
