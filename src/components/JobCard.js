@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StaticInfo from '../components/StaticInfo';
 import TagsList from '../components/TagsList';
 import Account from '../images/account.svg'; //change to bring in dynamic images
-import './JobList.css';
+import './JobCard.css';
 
 
 class JobCard extends Component {

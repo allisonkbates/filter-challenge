@@ -1,0 +1,20 @@
+.TagsList {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  flex: auto;
+  margin-right: 20px;
+}
+
+.tags {
+  color: var(--desaturated-dark-cyan);
+  background-color: var(--light-grayish-cyan2);
+  margin: 5px;
+  padding: 9px 9px 7px;
+  border-radius: 3px;
+}
+
+.tags:hover {
+  color: white;
+  background-color: var(--desaturated-dark-cyan);
+}
