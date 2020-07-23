@@ -7,6 +7,12 @@
   border: none;
   outline: none;
 }
+
+:root {
+  --light-background: hsl(180, 52%, 96%);
+  --red: #ff0000;
+}
+
 body {
-  background-color: hsl(180, 52%, 96%);
+  background-color: var(--light-background);
 }
