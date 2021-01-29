@@ -85,7 +85,7 @@ class JobList extends Component {
     return (
       <div className="container">
         {filterBox}
-        <div className="JobList">
+        <div className="jobList">
           {postings}
         </div>
       </div>

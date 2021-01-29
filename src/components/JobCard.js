@@ -9,10 +9,24 @@ class JobCard extends Component {
     const iconPath = process.env.PUBLIC_URL;
     const posting = this.props.posting;
     return (
-      <div className="JobCard">
-        <img src={iconPath + posting.logo} alt={posting.company} width="87" height="87"></img>
-        <StaticInfo posting={posting}/>
-        <TagsList posting={posting} handleClick={this.props.handleClick}/>
+      <div className="card__container">
+        <img 
+          src={iconPath + posting.logo} 
+          alt={posting.company} 
+          width="87" 
+          height="87"
+          className="card__image">
+        </img>
+        <StaticInfo 
+          posting={posting}
+        />
+        <div 
+          className="card__line">
+        </div>
+        <TagsList 
+          posting={posting} 
+          handleClick={this.props.handleClick}
+        />
       </div>
     )
   }
