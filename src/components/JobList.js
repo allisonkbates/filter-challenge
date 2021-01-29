@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import postingData from '../data.json';
 import JobCard from './JobCard';
 import FilterBox from './FilterBox';
-import './JobList.css';
+import '../styles/JobList.css';
 
 class JobList extends Component {
   constructor(props) {

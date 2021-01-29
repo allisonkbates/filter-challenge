@@ -1,5 +1,5 @@
 import React from 'react';
-import './FilterBox.css';
+import '../styles/FilterBox.css';
 
 function FilterBox(props) {
   const showTag= props.filteredTags.map((tag) =>

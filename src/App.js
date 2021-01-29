@@ -4,8 +4,8 @@ import JobList from './components/JobList';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div>
+      <div className="header"></div>
       <JobList />
     </div>
   );

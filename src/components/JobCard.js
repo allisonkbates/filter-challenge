@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StaticInfo from '../components/StaticInfo';
 import TagsList from '../components/TagsList';
-import './JobCard.css';
+import '../styles/JobCard.css';
 
 
 class JobCard extends Component {

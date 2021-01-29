@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './StaticInfo.css';
+import '../styles/StaticInfo.css';
 
 class StaticInfo extends Component {
   render() {
