@@ -1,6 +1,6 @@
 *, *:after, *:before {
   box-sizing: border-box;
-  font: inherit;
+  font-size: 15px;
   color: inherit;
   margin: 0;
   padding: 0;

@@ -1,13 +1,14 @@
 .filter-box {
   background-color: white;
-  width: 100%;
-  min-width: 600px;
-  height: 50px;
+  width: 90%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px;
+  font-family: 'Spartan', sans-serif;
+  min-height: 50px;
+  padding: 16px;
+  box-shadow: 4px 11px 15px -3px rgba(91,164,164,0.32);
 }
 
 .filter-list {
@@ -41,11 +42,18 @@
 }
 
 .clear {
-  color: var(--desaturated-dark-cyan);
+  color: var(--dark-grayish-cyan);
   background-color: white;
   border: none;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
 }
 
 .clear:hover {
   text-decoration: underline;
+  color: var(--desaturated-dark-cyan);
+}
+
+.hide-filter {
+  opacity: 0;
 }

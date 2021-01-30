@@ -74,17 +74,23 @@ class JobList extends Component {
       }
     });
 
-    let filterBox;
+  /*  let filterBox;
     if (this.state.showFilterBox) {
       filterBox = <FilterBox showFilterBox={this.state.showFilterBox} filteredTags={this.state.filteredTags} 
       handleClick={this.handleClick} closeButton={this.closeButton} clearButton={this.clearButton}/>
     } else {
-      filterBox = null;
-    }
+      filterBox = <FilterBox />;
+    }*/
 
     return (
       <div className="container">
-        {filterBox}
+        <FilterBox 
+          showFilterBox={this.state.showFilterBox} 
+          filteredTags={this.state.filteredTags} 
+          handleClick={this.handleClick} 
+          closeButton={this.closeButton} 
+          clearButton={this.clearButton}
+        />
         <div className="jobList">
           {postings}
         </div>

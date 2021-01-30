@@ -1,3 +1,7 @@
+.static-info {
+  padding: 10px 0px;
+}
+
 /* Top Row */
 .top-row {
   display: flex;
@@ -16,7 +20,7 @@
   padding: 8px 8px 0px;
   margin-left: 10px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: .8rem;
 }
 
 .featured {
@@ -25,14 +29,14 @@
   padding: 8px 8px 0px;
   margin-left: 10px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: .8rem;
 }
 
 /* Middle Row */
 .position {
   color: black;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.2rem;
   padding: 10px 0px;
 }
 

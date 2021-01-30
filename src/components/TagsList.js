@@ -9,7 +9,7 @@ class TagsList extends Component {
       <button className="tags" onClick={this.props.handleClick} value={tag} key={tag}>{tag}</button>
     );
     return (
-      <div className="TagsList">
+      <div className="tagsList">
         {tagsArr}
       </div>
     );

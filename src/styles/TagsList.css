@@ -1,6 +1,6 @@
-.TagsList {
+.tagsList {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   flex-wrap: wrap;
   flex: auto;
   margin-right: 20px;
@@ -8,6 +8,8 @@
 
 .tags {
   color: var(--desaturated-dark-cyan);
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
   background-color: var(--light-grayish-cyan2);
   margin: 5px;
   padding: 9px 9px 7px;
@@ -17,4 +19,10 @@
 .tags:hover {
   color: white;
   background-color: var(--desaturated-dark-cyan);
+}
+
+@media only screen and (min-width: 768px) {
+  .tagsList {
+    flex-direction: row-reverse;
+  }
 }

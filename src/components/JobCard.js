@@ -13,8 +13,6 @@ class JobCard extends Component {
         <img 
           src={iconPath + posting.logo} 
           alt={posting.company} 
-          width="87" 
-          height="87"
           className="card__image">
         </img>
         <StaticInfo 
